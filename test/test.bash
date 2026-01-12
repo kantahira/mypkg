@@ -18,6 +18,8 @@ source install/setup.bash
 
 #timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
 
+export PYTHONUNBUFFERED=1
+
 timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log 2>&1
 
 cat /tmp/mypkg.log
