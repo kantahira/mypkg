@@ -15,7 +15,7 @@ cd $dir/ros2_ws
 colcon build
 source $dir/ros2_ws/install/setup.bash
 
-ros2 launch mypkg talk_listen.launch.py > /dev/null 2>&1 &
+ros2 launch mypkg cpu_monitor.launch.py > /dev/null 2>&1 &
 PID=$!
 
 sleep 5
