@@ -17,6 +17,13 @@ class Talker(Node):
             with open('/sys/class/power_supply/BAT0/capacity', 'r') as f:
                 msg.data = int(f.read().strip())
 
+    except FileNotFoundError:
+            self.get_logger().warn("Battery info not found. Sending dummy value.")
+            msg.data = 0
+    except Exception as e:
+            self.get_logger().error(f"Error reading battery: {e}")
+            msg.data = -1
+    
     self.pub.publish(msg)
 
 def main():
