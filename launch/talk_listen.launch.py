@@ -10,9 +10,9 @@ def generate_launch_description():
             package='mypkg',
             executable='cpu_load',
             )
-    listener = launch_ros.actions.Node(
+    cpu_view = launch_ros.actions.Node(
             package='mypkg',
-            executable='listener',
+            executable='cpu_view',
             output='screen'
             )
 

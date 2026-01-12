@@ -26,8 +26,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'cpu=load = mypkg.cpu_load:main',
-            'listener = mypkg.listener:main',
+            'cpu_load = mypkg.cpu_load:main',
+            'cpu_view = mypkg.cpu_view:main',
         ],
     },
 )
