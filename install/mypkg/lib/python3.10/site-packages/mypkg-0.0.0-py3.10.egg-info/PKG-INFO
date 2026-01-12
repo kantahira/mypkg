@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: mypkg
+Version: 0.0.0
+Summary: a package for practice
+Home-page: UNKNOWN
+Maintainer: Kanta Hirazawa
+Maintainer-email: s24C1101LD@s.chibakoudai.jp
+License: BSD-3-Clause
+Platform: UNKNOWN
+Provides-Extra: test
+License-File: LICENSE
+
+UNKNOWN
+
