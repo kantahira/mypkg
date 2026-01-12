@@ -13,10 +13,7 @@ fi
 
 cd $dir/ros2_ws
 colcon build
-#source $dir/.bashrc
 source install/setup.bash
-
-#timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
 
 export PYTHONUNBUFFERED=1
 
@@ -25,4 +22,3 @@ timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log 2>&1
 cat /tmp/mypkg.log
 
 cat /tmp/mypkg.log | grep 'Received Battery Level'
-#grep 'Listen: 10'
