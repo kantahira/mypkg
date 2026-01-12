@@ -26,7 +26,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'talker = mypkg.talker:main',
+            'cpu=load = mypkg.cpu_load:main',
             'listener = mypkg.listener:main',
         ],
     },
