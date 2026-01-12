@@ -10,7 +10,6 @@ class Talker(Node):
         super().__init__('talker')
         self.pub = self.create_publisher(Int16, 'battery', 10)
         self.create_timer(1.0, self.cb)
-
     def cb(self):
         msg = Int16()
         try:
