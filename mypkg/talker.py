@@ -4,3 +4,30 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Int16
+
+class Talker(Node):
+    def __init__(self):
+        super().__init__('talker')
+        self.pub = self.create_publisher(Int16, 'battery', 10)
+        self.create_timer(1.0, self.cb)
+
+    def cb(self):
+        msg = Int16()
+        try:
+            with open('/sys/class/power_supply/BAT0/capacity', 'r') as f:
+                msg.data = int(f.read().strip())
+
+    self.pub.publish(msg)
+
+def main():
+    rclpy.init()
+    node = Talker()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
+    node.destroy_node()
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
