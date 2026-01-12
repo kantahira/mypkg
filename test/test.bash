@@ -5,6 +5,12 @@
 dir=~
 [ "$1" != "" ] && dir="$1"
 
+if [ -f /opt/ros/jazzy/setup.bash ]; then
+    source /opt/ros/jazzy/setup.bash
+elif [ -f /opt/ros/humble/setup.bash ]; then
+    source /opt/ros/humble/setup.bash
+fi
+
 cd $dir/ros2_ws
 colcon build
 source $dir/ros2_ws/install/setup.bash
